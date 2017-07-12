@@ -1,0 +1,107 @@
+$darkRed:#DB4453;
+$lightRed:#ED5564;
+$bgColor:#F5F5F5;
+
+i{
+  font-size: 20px;
+}
+/*切换菜单 商品 详情 评论*/
+.headerReal{
+  display: none;
+  animation: bgColor 500ms ease-in-out;
+}
+
+/*背景颜色变化动画*/
+@keyframes bgColor {
+  0% {
+    background:rgba(245,245,245,0);
+  }
+  25% {
+    background:rgba(245,245,245,0.25);
+  }
+  50% {
+    background:rgba(245,245,245,0.5);
+  }
+  75% {
+    background:rgba(245,245,245,0.75);
+  }
+  100% {
+    background:rgba(245,245,245,1);
+  }
+}
+
+.detailPage{
+  /*切换菜单 商品 详情 评论*/
+  position: absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  width:100%;
+  .mint-navbar{
+    height:45px;
+    background:$bgColor;
+    position: fixed;
+    left:0;
+    top:0;
+    z-index:9999;
+    width:100%;
+    .mint-tab-item-label{
+      font-size: 14px;
+    }
+    .iconfont{
+      width:50px;
+      line-height:45px;
+    }
+  }
+  .mint-tab-container-wrap{
+    /*商品内容轮播图区域*/
+    .goods{
+      background:$bgColor;
+      .topPic {
+        position: fixed;
+        left:0;
+        top:0;
+        width:100%;
+        height:308px;
+        background: #fff;
+        box-sizing: border-box;
+        padding:10px;
+      }
+      .load{
+        height:40px;
+        line-height:30px;
+        color:#888;
+        font-size: 14px;
+        font-weight: bold;
+        padding:5px 10px;
+        box-sizing: border-box;
+        margin:5px 0 20px;
+        background: #fff;
+        .iconfont{
+          vertical-align: middle;
+          margin-right:10px;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+/*切换菜单 ==== 详情*/
+.detail{
+  width:100%;
+  font-size: 0;
+    img{
+      width: 100% !important;
+  }
+}
+.detail>div{
+  margin-top:45px;
+}
+
+
+
+
+
+
+
