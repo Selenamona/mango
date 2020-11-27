@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>洋码头 - 注册</title>
+	<link rel="stylesheet" href="css/common.css">
+	<link rel="stylesheet" href="css/iconfont.css">
+	<link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+	<header>		
+		<div class="header">
+			<div class="left">	
+				<a href="index.html"><img src="img/logo.png" alt=""></a>
+			</div>	
+			<div class="right">
+				<a href="login.html">请登录</a>
+				<span><a href="register.html">快速注册</a><i class="iconfont">&#xe61d;</i></span>
+				<span><a href="index.html">我的码头</a><i class="iconfont">&#xe61d;</i></span>
+			</div>
+		</div>
+	</header>
+	<section>
+		<div class="top">
+			<p class="left">手机注册</p>
+			<p class="right">你是不是想注册为买手？ 请<a href="index.html">点击这里</a></p>
+		</div>
+		<div class="bottom">
+			<div class="left">
+				<p><span><em>*</em>手机号码：</span><input placeholder="请输入手机号码" type="text" id="phone"><span>请输入手机号码</span></p>
+				<p><span><em>*</em>验证码：</span><input placeholder="请输入验证码" type="text" id="identify"><span class="randomInt">8451</span><span>请输入验证码</span></p>
+				<p><span><em>*</em>短信验证码：</span><input placeholder="请输入验证码" type="text" id="code"><span class="getRandomInt">获取验证码</span><span>请输入验证码</span></p>
+				<p><span><em>*</em>登录密码：</span><input placeholder="请输入密码" type="password" id="password"><span>请输入密码</span></p>
+				<p><span><em>*</em>确认密码：</span><input placeholder="请输入确认密码" type="password" id="iPass"><span>请输入确认密码</span></p>
+				<p><span><em>*</em>用户名：</span><input placeholder="请输入用户名" type="text" id="user"><span>请输入用户名</span></p>
+				<p><span></span><input type="checkbox">我已经认真阅读并同意洋码头的<a href="">《用户协议》</a>。</p>
+				<button>注册</button>
+			</div>
+			<div class="right">
+				<p>您也可以使用下列帐号登录洋码头：</p>
+				<div>
+					<a class="first" href="">使用新浪微博账户登录</a>
+					<a class="center" href="">使用支付宝账户登录</a>
+					<a class="last" href="">使用微信账户登录</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer>
+		<p>© 2009－2018 ymatou.com, All rights reserved 增值电信业务经营许可证：沪B2-20140021 41</p>
+		<p>上海洋码头网络技术有限公司 版权所有 </p>
+		<p>上海市灵石路695号3号楼1404室</p>
+	</footer>
+</body>
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/main.js"></script>
+<script>
+
+	$(function(){
+		var complete = [false,false,false,false,false,false]
+		//随机四位数验证码
+		$(".randomInt").click(function(){
+			$(this).css("color",randomColor());
+		})
+
+		//手机号码验证
+		$("#phone").focus(function(){
+			$(this).next().show().css({
+				background:"#ccc",
+				display:"inline-block"
+			}).html("输入有效的手机号码")
+		})
+		$("#phone").blur(function(){
+			var phoneValue = $(this).val();
+			if(phoneValue == ""){
+				$(this).next().show().css({
+					background:"#eb5e00",
+					display:"inline-block"
+				}).html("请输入手机号码")
+			}else{				
+				var reg = /^1[3578]\d\d\d\d\d\d\d\d\d$/;
+				if(reg.test(phoneValue)){
+					$(this).next().hide();
+					complete[0]=true;
+				}else{
+					$(this).next().show().css({
+						background:"#eb5e00",
+						display:"inline-block"
+					}).html("手机号码格式不正确")
+				}
+			}
+		})
+		//验证码验证
+		$("#identify").focus(function(){
+			$(this).next().next().show().css({
+				background:"#ccc",
+				display:"inline-block"
+			}).html("输入有效的验证码")
+		})
+
+		$("#identify").blur(function(){
+			var identifyValue = $(this).val();
+			if(identifyValue == ""){
+				$(this).next().next().show().css({
+					background:"#eb5e00",
+					display:"inline-block"
+				}).html("请输入验证码")
+			}else{
+				$(this).next().next().hide()
+				complete[1]=true
+			}
+		})
+		//短信验证码
+		$("#code").focus(function(){
+			$(this).next().next().show().css({
+				background:"#ccc",
+				display:"inline-block"
+			}).html("输入有效的验证码")
+		})
+		$("#code").blur(function(){
+			var codeValue = $(this).val();
+			if(codeValue == ""){
+				$(this).next().next().show().css({
+					background:"#eb5e00",
+					display:"inline-block"
+				}).html("请输入验证码")
+			}else{
+				$(this).next().next().hide()
+				complete[2]=true
+			}
+		})
+		//登录密码
+		$("#password").focus(function(){
+			$(this).next().show().css({
+				background:"#ccc",
+				display:"inline-block"
+			}).html("6~16个字符，请使用英文字母（区分大小写）、符号或数字")
+		})
+		$("#password").blur(function(){
+			var passwordValue = $(this).val();
+			if(passwordValue == ""){
+				$(this).next().show().css({
+					background:"#eb5e00",
+					display:"inline-block"
+				}).html("请输入密码")
+			}else{	
+				var reg = /^\S{6,16}$/	
+				if(reg.test(passwordValue)){
+					$(this).next().hide()
+					complete[3]=true
+				}else{
+					$(this).next().show().css({
+					background:"#eb5e00",
+					display:"inline-block"
+					}).html("必须输入6-16位的字符")
+				}						
+			}
+		})
+		//确认密码
+		$("#iPass").focus(function(){
+			$(this).next().show().css({
+				background:"#ccc",
+				display:"inline-block"
+			}).html("确认您上面输入的密码")
+		})
+		$("#iPass").blur(function(){
+			var iPassValue = $(this).val();
+			if(iPassValue == ""){
+				$(this).next().show().css({
+					background:"#eb5e00",
+					display:"inline-block"
+				}).html("请输入确认密码")
+			}else{		
+				if(iPassValue == $("#password").val()){
+					$(this).next().hide()
+					complete[4]=true
+				}else{
+					$(this).next().show().css({
+					background:"#eb5e00",
+					display:"inline-block"
+					}).html("两次输入密码不一致")
+				}		
+				
+			}
+		})
+		//用户名
+		$("#user").focus(function(){
+			$(this).next().show().css({
+				background:"#ccc",
+				display:"inline-block"
+			}).html("4~20个字符，可使用数字、字母、下划线，注册后用户名不能更改")
+		})
+		$("#user").blur(function(){
+			var userValue = $(this).val();
+			if(userValue == ""){
+				$(this).next().show().css({
+					background:"#eb5e00",
+					display:"inline-block"
+				}).html("请输入用户名")
+			}else{				
+				var reg = /^\w{4,20}$/;
+				if(reg.test(userValue)){
+					$(this).next().hide();
+					complete[5]=true
+				}else{
+					$(this).next().show().css({
+						background:"#eb5e00",
+						display:"inline-block"
+					}).html("必须输入4-20的字符")
+				}
+			}
+		})
+		//发送数据
+		$(document).ajaxStart(function(){
+			var oImg = `<img src="img/loading.gif">`;
+			$(".bottom").after($(oImg))		
+		})
+
+		$("button").click(function(){
+			var oCheck = $("input[type=checkbox]")[0].checked;
+			for (var i = 0; i < complete.length; i++) {
+				if(complete[i] != false && oCheck){
+					var oUser = $("#user").val();
+					var oPass = $("#password").val();
+					$.ajax({
+						url:"http://datainfo.duapp.com/shopdata/userinfo.php",
+						type:"POST",
+						data:{
+							status:"register",
+							userID:oUser,
+							password:oPass,
+						},
+						success:function(res){
+							res = Number(res);
+							switch(res){
+								case 0: $("#user").next().show().css({
+											background:"#eb5e00",
+											display:"inline-block"
+										}).html("用户名重名");
+										location.reload();
+								break;
+								case 1: $("#user").next().show().css({
+											background:"#eb5e00",
+											display:"inline-block"
+										}).html("注册成功,3秒后自动跳转登录页面");
+										setTimeout(function(){
+											location.href = "login.html"
+										},3000);
+								break;
+								case 2: $("#user").next().show().css({
+											background:"#eb5e00",
+											display:"inline-block"
+										}).html("服务器出错，稍后再试");break;
+							}
+						},
+						error:function(){
+							alert("你可以走了~")
+						}
+					})
+				}else{
+					return
+				}
+			}
+		})
+		
+	})
+</script>
+
+</html>

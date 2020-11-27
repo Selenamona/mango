@@ -1,0 +1,60 @@
+
+<div class="list-box">
+    <div class="list-f">
+        <ul class="list-ul">
+
+        </ul>
+    </div>
+    <div class="list-sp">
+        <ul class="sp-ul">
+
+
+        </ul>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function(){
+
+      console.log("list.html")
+      var str = "";
+        $.getJSON("http://datainfo.duapp.com/shopdata/getclass.php",function(data){
+          //console.log(data)
+          for(var i=0; i<data.length; i++){
+              str += '<li name="'+data[i].classID+'">'+
+                          data[i].className
+                      '</li>'
+          }
+          $(".list-ul").html(str)
+        })
+
+      $(".list-ul").on("touchend","li",function(){
+          var id = $(this).attr("name")
+        $.ajax({
+            type:'GET',
+            url:'http://datainfo.duapp.com/shopdata/getGoods.php?callback=?',
+            data:{"classID":id},
+            dataType:"jsonp",
+            success:function(data){
+                console.log(data)
+                var str = "";
+                for(var i=0; i<data.length; i++){
+
+                    str += '<li name="'+data[i].goodsID+'">'+
+                                '<img src="'+data[i].goodsListImg+'" />'+
+                                '<p>'+data[i].goodsName+'</p>'+
+                                '<span class="price">¥'+data[i].price+'</span>'+
+                            '</li>'
+                }
+                $(".sp-ul").html(str);
+
+
+            }
+        })
+      })
+
+      $(".sp-ul").on("touchend","li",function(){
+          var id = $(this).attr("name");
+         location.href = "./xqy.html?goodsID="+id
+      })
+    })
+</script>

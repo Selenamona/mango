@@ -1,0 +1,90 @@
+@import "prize.css";
+
+body,html{
+    height: 100%;
+}
+*{
+    margin:0;
+    padding:0;
+}
+.wrap{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+}
+header{
+    width:100%;
+    position: fixed;
+    left:0;
+    top:0;
+    height: 44px;
+    line-height: 44px;
+    text-align:center;
+    background:#a90506;
+    display: flex;
+    color:#fff;
+    .back{
+        width: 35px;
+        text-align: right;   
+    }
+    .prize{
+        flex:1;
+        font-size:18px;
+    }
+    .out{
+        width: 75px;
+        margin-right: 5px;
+    }
+    .out a{
+        color:#fff;
+        text-align: center;
+        line-height: 30px;
+        display: inline-block;
+        text-decoration: none;
+        width: 75px;
+        height: 30px;
+        background: #d10909;
+        border:1px solid #860102;
+        border-radius: 3px;
+    }    
+}
+section{
+    padding:51px 7px 50px;
+    // box-sizing: border-box;
+    background: #f3eff0;
+    flex:1;
+    .get{
+        width: 100%;
+        height:284px;
+        background: #a90506;
+        margin-bottom:9px;
+        position: relative;
+        .getPrize{
+           position: absolute;
+           left: 34%;
+           top:32%;
+           width: 101px;
+           height: 94px;
+           background: #640000;
+           color:#fff;
+           font-size: 30px;
+           text-align: center;
+           line-height:94px ;
+        }
+    }
+    .res{
+        width: 100%;
+        background: #ff4948;
+        border:1px solid #a80506;
+        height: 115px;
+        overflow: auto;
+        padding:0 16px;
+        box-sizing: border-box;
+        li{
+            list-style: none;
+            line-height: 30px;
+            font-size: 18px;
+            color:#630000;
+        }
+    }
+}

@@ -1,0 +1,179 @@
+header{
+	height:98px;
+	border-bottom:2px solid #cc3333;
+}
+header .header{
+	height: 98px;width:1190px;
+	margin:0 auto;
+	padding:0 5px;
+}
+header .header .left{
+	float: left;
+}
+header .header img{
+	margin: 12px 0;
+}
+header .header .right{
+	float: right;
+	padding-top:40px;
+}
+header .right a{
+	color:#999;
+	line-height: 30px;
+}
+header .right a:hover{
+	color:#3368ff;
+}
+header .right .iconfont{
+	color:#999;
+	width:6px;height: 6px;
+}
+header .right span{
+	margin-left:10px;
+}
+section{
+	width:1190px;height: 523px;
+	padding:0 5px;
+	margin: 0 auto;
+}
+section .top{
+	height: 72px;
+	border-bottom: 2px solid #bbb;
+}
+section .top .left{
+	width:149px;height: 72px;
+	float: left;
+	background: url(../img/register_arrow.jpg) no-repeat bottom;
+	border-bottom: 2px solid #f04e00;
+	color:#f04e00;
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 70px;
+	text-align: center;
+}	
+section .top .right{
+	float: right;
+	margin-top:39px;
+	color:#666;
+}
+section .top .right a{
+	color:#3368ff;
+}
+section .bottom .left p{
+	margin:15px 0;padding:5px 0;
+	line-height: 26px;
+	color:#777;
+}
+section .bottom .left em{
+	color:#f04e00;margin-right:2px;
+	font-style: normal;
+}
+section .bottom .left p span:nth-child(1){
+	width:105px;height: 26px;
+	text-align: right;
+	display: inline-block;
+	margin-right: 8px;
+}
+section .bottom .left p input{
+	width:200px;height: 22px;
+	border:1px solid #dadada;
+	box-shadow: 2px 2px 4px #f0f0f0 inset;
+	padding:2px 5px;
+	margin-right: 3px;
+}
+section .bottom .left p:nth-child(2) input,section .bottom .left p:nth-child(3) input{
+	width:90px;
+}
+section .bottom .left p:nth-child(7) input{
+	width:13px;
+	margin:5px;
+	border:none;
+	box-shadow: none;
+	padding:0;
+	vertical-align: middle;
+}
+section .bottom .left p a{
+	color:#3368ff;
+}
+section .bottom .left button{
+	margin-left:113px;
+	width:67px;height: 30px;
+	border-radius: 8px;
+	background: #f04e00;
+	border:none;
+	color:#fff;
+	outline: medium;
+}
+section .bottom .left p .randomInt{
+	width:52px;height: 20px;
+	background: #f7f1fd;
+	color:#3329d8;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 20px;
+	display: inline-block;
+	margin:0 3px 0 5px;
+	cursor:pointer;
+	border:1px solid #ccc;
+}
+section .bottom .left p .getRandomInt{
+	width:86px;height: 30px;
+	color:#fff;
+	text-align: center;
+	line-height: 30px;
+	margin:0 3px 0 5px;
+	background: #8fa0ab;
+	border-radius: 4px;
+	cursor:pointer;
+	display: inline-block;
+}
+section .bottom .left p span:nth-last-child(1){
+	height: 26px;line-height: 26px;
+	color:#fff;background: #eb5e00;
+	padding:0 10px;
+	display: none;
+} 
+section .bottom .left{
+	float: left;
+}
+section .bottom .right{
+	width:192px;height: 370px;
+	padding:20px 30px;
+	float: right;
+	background: url(../img/right.png) no-repeat left;
+}
+section .bottom .right p{
+	padding:10px 0;
+}
+section .bottom .right div{
+	border:1px solid #ccc;
+}
+section .bottom .right a{
+	display: block;
+	border-bottom:1px dashed #ccc;
+	height: 24px;
+	line-height: 24px;
+	padding:5px 10px 5px 40px;
+}
+section .bottom .right .last{
+	border-bottom:none;
+	background:url(../img/v.png) no-repeat 10px 10px;
+}
+section .bottom .right .first{
+	background:url(../img/wb_03.png) no-repeat 5px 8px;
+}
+section .bottom .right .center{
+	border-bottom:none;
+	background:url(../img/f_03.png) no-repeat 10px 10px;
+}
+footer{
+	height: 54px;
+	text-align: center;
+	color:#777;
+}
+footer p{
+	line-height: 20px;
+}
+
+

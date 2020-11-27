@@ -1,0 +1,119 @@
+$color : blue;
+@import "./base/reset";
+
+
+/**头部**/
+.header{
+  width: 100%;
+  height: 40px;
+  background: #af1d1d;
+  position: fixed;
+  top: 0;
+  left: 0;
+  .header-list{
+    display: flex;
+    text-align: center;
+    line-height: 40px;
+    .header-input{
+      flex: 1;
+      color: #fff;
+      font-weight: bold;
+      font-size: 16px;
+    }
+    .header-btn{
+      width: 50px;
+      height: 100%;
+      line-height: 40px;
+      img{
+        width: 30px;
+        height: 30px;
+        padding-top:5px;
+      }
+    }
+  }
+}
+/**内容**/
+
+.conter{
+  width: 100%;
+  height: 100%;
+  padding: 40px 0 50px 0;
+  overflow-y: auto;
+  background: #f3f4f6;
+}
+
+/**尾部**/
+
+.footer{
+    width: 100%;
+    height: 50px;
+    background: #484850;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    .footer-list{
+        display: flex;
+        justify-content: space-around;
+        li{
+          padding-top: 5px;
+           img{
+            width: 25px;
+            height: 25px;
+          }
+          p{
+            color: #fff;
+            font-size: 13px;
+            margin-top: -0.55rem;
+          }
+      }
+    }
+}
+
+/**列表页**/
+.list-box{
+}
+.list-f{
+  overflow: hidden;
+}
+.list-ul li{
+  float: left;
+  font-size: 12px;
+  padding: 5px;
+  background: #ccc;
+  margin:5px 4px;
+  color: #fff;
+}
+
+.sp-ul{
+  padding-top: 20px;
+}
+.sp-ul li{
+  width: 3.75rem;
+  margin: 10px 0;
+  padding: 0 0.40rem;
+  float: left;
+  img{
+    width:2.86rem;
+    height:2.86rem;
+    box-shadow: 0 2px 10px #ccc;
+    border: 1px solid #ccc;
+  }
+  p{
+    white-space:nowrap;
+    overflow: hidden;
+    font-size: 14px;
+    text-overflow:ellipsis;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  .price{
+    color: red;
+    font-weight: bold;
+    font-size: 16px;
+    display: block;
+    margin-bottom: 10px;
+  }
+}
+
+/**商品资料**/

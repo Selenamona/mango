@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width,
+               initial-scale=1.0,
+               minimum-scale=1.0,
+               maximum-scale=1.0,
+               user-scalable=no">
+    <title></title>
+    <link rel="stylesheet" href="./app/css/swiper.css">
+    <link rel="stylesheet" href="./app/css/xqy.css">
+  </head>
+  <body>
+    <div class="header">
+      <ul class="header-list">
+          <li class="header-btn">《</li>
+          <li class="header-input">商品资料</li>
+          <li class="header-btn"><img src="./img/gouwuc.png" alt=""></li>
+      </ul>
+    </div>
+    <div class="conter">
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+        <div class="text-sp">
+            <!--json商品详情信息-->
+        </div>
+    </div>
+
+    <div class="spxq">
+        <span>查看商品详情</span>
+        <span>></span>
+    </div>
+
+    <div class="footer">
+         <a class="login-btn">添加到购物车</a>
+    </div>
+  </body>
+  <script src="./js/zepto.1.2.0.js" charset="utf-8"></script>
+  <script src="./js/swiper-3.4.2.jquery.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+      var goodsID = window. location.href;
+      var good = goodsID.split("?")[1];
+      var id = good.split("=")[1];
+      var oData = []
+      $.ajax({
+        type:'GET',
+        url:'http://datainfo.duapp.com/shopdata/getGoods.php?callback=?',
+        data:{"goodsID":id},
+        dataType:"jsonp",
+        success:function(data){
+           
+            oData = data;
+            var str = "";
+            var text = "";
+            var benurl = JSON.parse(data[0].goodsBenUrl);
+           // console.log(data[0])
+            for(var i=0; i<benurl.length; i++){
+              str += '<div class="swiper-slide">'+
+                            '<img src="'+benurl[i]+'" alt="">'+
+                    '</div>';
+            }
+            $(".swiper-wrapper").html(str);
+            text += '<div class="text">'+
+                        '<p class="text-title">'+data[0].goodsName+'</p>'+
+                        '<p class="text-price">'+
+                            '<span>¥'+data[0].price+'</span>'+
+                            '<del>'+data[0].price+'</del>'+
+                        '</p>'+
+                        '<p class="text-title">购买人数:'+data[0].buynumber+'</p>'+
+                    '</div>'
+            $(".text-sp").html(text)
+            var mySwiper = new Swiper ('.swiper-container', {
+              direction: 'vertical',
+              autoplay : 3000,
+              speed:1000,
+              loop: true,
+              direction : 'horizontal',
+              autoplayDisableOnInteraction : false,
+              pagination : '.swiper-pagination',
+              paginationClickable :true
+            })
+        }
+      })
+
+  $(".login-btn").on("click",function(){
+    var goods = JSON.parse(localStorage.getItem("goods") || '[]');
+    var hasSame = false;
+    for (var i = 0; i < goods.length; i++) {
+      //if(goods[i].goodsID == oData[0].goodsID){
+      if(goods[i].goods.goodsID == oData[0].goodsID){
+        
+          hasSame = true;
+          goods[i].number++;
+          break;
+      }
+    }
+    if(!hasSame){
+        //var newGood = {goodsID:oData[0].goodsID,number:1}
+        var newGood = {goods:oData[0],number:1}
+        goods.push(newGood)
+    }
+    
+    localStorage.setItem('goods',JSON.stringify(goods))
+    
+  })
+  </script>
+</html>

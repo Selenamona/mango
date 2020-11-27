@@ -1,0 +1,66 @@
+@import url(cart.css);
+body, html {
+  height: 100%; }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+.wrap {
+  display: flex;
+  height: 100%;
+  flex-direction: column; }
+
+header {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 44px;
+  line-height: 44px;
+  text-align: center;
+  background: #a90506;
+  display: flex;
+  color: #fff; }
+  header .back {
+    width: 35px;
+    text-align: right; }
+  header .cart {
+    flex: 1;
+    font-size: 18px; }
+  header .sum {
+    margin-right: 10px; }
+    header .sum a {
+      display: inline-block;
+      width: 50px;
+      height: 25px;
+      background: #c70f0d;
+      text-align: center;
+      line-height: 25px;
+      border: 1px solid #a02c2d;
+      border-radius: 5px;
+      font-size: 12px;
+      color: #fff;
+      text-decoration: none; }
+
+.money {
+  width: 100%;
+  height: 44px;
+  background: #747474;
+  position: fixed;
+  left: 0;
+  top: 44px;
+  line-height: 44px;
+  color: #fff;
+  padding-left: 12px; }
+  .money span {
+    margin: 0 10px 0 7px; }
+    .money span.price {
+      color: #a91b1a; }
+
+.main li {
+  height: 115px;
+  padding: 13px 12px 15px 16px;
+  box-sizing: border-box; }
+
+/*# sourceMappingURL=cart.css.map */

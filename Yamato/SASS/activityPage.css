@@ -1,0 +1,238 @@
+@import url(activityPage.css);
+.home_img {
+  height: 120px;
+  background: #fe2e3c; }
+  .home_img img {
+    margin: 0 auto; }
+
+.tab_timer {
+  height: 66px;
+  background: #383838; }
+  .tab_timer .tab {
+    width: 1200px;
+    margin: 0 auto; }
+    .tab_timer .tab div {
+      float: left;
+      width: 400px;
+      height: 66px;
+      border-bottom: 4px solid #383838;
+      color: #9b9b9b;
+      padding: 14px 0 12px;
+      text-align: center;
+      box-sizing: border-box;
+      font-size: 14px; }
+      .tab_timer .tab div.active {
+        color: #fff;
+        background: #000;
+        font-size: 16px;
+        padding: 12px 0 14px;
+        border-bottom: 4px solid #c33; }
+      .tab_timer .tab div.activeC {
+        padding-top: 17px; }
+        .tab_timer .tab div.activeC span {
+          color: #c33;
+          font-size: 20px;
+          margin-left: 10px;
+          vertical-align: middle;
+          float: left; }
+        .tab_timer .tab div.activeC p, .tab_timer .tab div.activeC section .content .c_bottom li:last-child a span, section .content .c_bottom li:last-child a .tab_timer .tab div.activeC span {
+          float: left;
+          margin-left: 150px;
+          height: 26px;
+          line-height: 26px; }
+
+section {
+  width: 1200px;
+  margin: 0 auto; }
+  section .content {
+    height: 920px;
+    margin-top: 40px; }
+    section .content .c_top {
+      position: relative;
+      height: 560px; }
+      section .content .c_top .c_title {
+        margin-left: 119px;
+        width: 467px;
+        background: url(../img/jiao.png) no-repeat right 0; }
+        section .content .c_top .c_title a {
+          max-width: 700px;
+          width: 400px;
+          display: block;
+          height: 44px;
+          background: #f1f1f1;
+          color: #666;
+          font-size: 22px;
+          line-height: 44px;
+          text-align: center;
+          padding: 0 20px;
+          overflow: hidden; }
+          section .content .c_top .c_title a:hover {
+            color: #c33; }
+      section .content .c_top .c_imgCover {
+        position: absolute;
+        top: 44px; }
+      section .content .c_top .position {
+        width: 128px;
+        height: 59px;
+        position: absolute;
+        left: -9px;
+        top: 0;
+        background: url(../img/id.png) no-repeat;
+        color: #fff;
+        font-size: 16px;
+        text-align: center;
+        padding: 10px 0 10px; }
+        section .content .c_top .position p, section .content .c_top .position .c_bottom li:last-child a span, section .content .c_bottom li:last-child a .c_top .position span {
+          font-size: 24px; }
+      section .content .c_top .c_main {
+        width: 928px;
+        height: 460px;
+        background: url(../img/border.png) no-repeat;
+        position: absolute;
+        left: 136px;
+        top: 100px; }
+        section .content .c_top .c_main .box {
+          width: 800px;
+          height: 320px;
+          box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+          margin: 43px 0 0 68px;
+          background: #fff; }
+          section .content .c_top .c_main .box .img {
+            float: left;
+            margin-right: 20px;
+            position: relative; }
+            section .content .c_top .c_main .box .img img {
+              width: 320px;
+              height: 320px; }
+            section .content .c_top .c_main .box .img .cover {
+              display: none;
+              width: 280px;
+              height: 70px;
+              background: rgba(0, 0, 0, 0.5);
+              text-align: center;
+              line-height: 70px;
+              font-size: 28px;
+              position: absolute;
+              z-index: 988;
+              left: 20px;
+              top: 126px;
+              color: #fff; }
+          section .content .c_top .c_main .box .box_right {
+            float: left;
+            padding: 20px 0 14px;
+            height: 286px;
+            font-size: 24px; }
+            section .content .c_top .c_main .box .box_right p:nth-child(1), section .content .c_top .c_main .box .box_right .c_bottom li:last-child a span:nth-child(1), section .content .c_bottom li:last-child a .c_top .c_main .box .box_right span:nth-child(1) {
+              color: #666;
+              height: 35px;
+              line-height: 35px; }
+              section .content .c_top .c_main .box .box_right p:nth-child(1) img, section .content .c_top .c_main .box .box_right .c_bottom li:last-child a span:nth-child(1) img, section .content .c_bottom li:last-child a .c_top .c_main .box .box_right span:nth-child(1) img {
+                width: 35px;
+                height: 35px;
+                margin-right: 10px;
+                float: left;
+                vertical-align: middle; }
+            section .content .c_top .c_main .box .box_right p:nth-child(2), section .content .c_top .c_main .box .box_right .c_bottom li:last-child a span:nth-child(2), section .content .c_bottom li:last-child a .c_top .c_main .box .box_right span:nth-child(2) {
+              margin: 20px 0 50px; }
+              section .content .c_top .c_main .box .box_right p:nth-child(2) a, section .content .c_top .c_main .box .box_right .c_bottom li:last-child a span:nth-child(2) a, section .content .c_bottom li:last-child a .c_top .c_main .box .box_right span:nth-child(2) a {
+                color: #383838;
+                font-size: 28px; }
+                section .content .c_top .c_main .box .box_right p:nth-child(2) a:hover, section .content .c_top .c_main .box .box_right .c_bottom li:last-child a span:nth-child(2) a:hover, section .content .c_bottom li:last-child a .c_top .c_main .box .box_right span:nth-child(2) a:hover {
+                  color: #c33; }
+            section .content .c_top .c_main .box .box_right p:nth-child(3), section .content .c_top .c_main .box .box_right .c_bottom li:last-child a span:nth-child(3), section .content .c_bottom li:last-child a .c_top .c_main .box .box_right span:nth-child(3) {
+              color: #646464;
+              font-size: 16px; }
+            section .content .c_top .c_main .box .box_right p:nth-child(4), section .content .c_top .c_main .box .box_right .c_bottom li:last-child a span:nth-child(4), section .content .c_bottom li:last-child a .c_top .c_main .box .box_right span:nth-child(4) {
+              margin: 5px 0 10px;
+              color: #c33;
+              height: 52px; }
+              section .content .c_top .c_main .box .box_right p:nth-child(4) span, section .content .c_top .c_main .box .box_right .c_bottom li:last-child a span:nth-child(4) span, section .content .c_bottom li:last-child a .c_top .c_main .box .box_right span:nth-child(4) span {
+                font-size: 46px; }
+            section .content .c_top .c_main .box .box_right p:nth-child(5) a, section .content .c_top .c_main .box .box_right .c_bottom li:last-child a span:nth-child(5) a, section .content .c_bottom li:last-child a .c_top .c_main .box .box_right span:nth-child(5) a {
+              display: block;
+              background: #c33;
+              width: 232px;
+              height: 54px;
+              border-radius: 3px;
+              color: #fff;
+              font-size: 28px;
+              text-align: center;
+              line-height: 54px; }
+        section .content .c_top .c_main .timer {
+          width: 373px;
+          height: 56px;
+          margin: 17px auto;
+          color: #646464;
+          font-size: 26px;
+          line-height: 56px;
+          padding: 0 24px;
+          box-sizing: border-box; }
+          section .content .c_top .c_main .timer .shi {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            background: #646464;
+            display: inline-block;
+            vertical-align: middle;
+            line-height: 40px;
+            text-align: center;
+            color: #fff; }
+          section .content .c_top .c_main .timer .hour {
+            margin-left: 20px; }
+          section .content .c_top .c_main .timer .mao {
+            width: 5px;
+            color: #646464;
+            display: inline-block;
+            text-align: center; }
+    section .content .c_bottom {
+      height: 317px;
+      margin-top: 40px; }
+      section .content .c_bottom li {
+        width: 210px;
+        height: 295px;
+        border: 1px solid #dedede;
+        padding: 10px;
+        float: left;
+        margin-right: 10px; }
+        section .content .c_bottom li img {
+          width: 210px;
+          height: 210px; }
+        section .content .c_bottom li p:nth-child(2), section .content .c_bottom li:last-child a span:nth-child(2) {
+          margin: 12px 0 15px;
+          height: 32px; }
+          section .content .c_bottom li p:nth-child(2) a, section .content .c_bottom li:last-child a span:nth-child(2) a {
+            color: #666; }
+            section .content .c_bottom li p:nth-child(2) a:hover, section .content .c_bottom li:last-child a span:nth-child(2) a:hover {
+              color: #c33; }
+        section .content .c_bottom li p:nth-child(3), section .content .c_bottom li:last-child a span:nth-child(3) {
+          color: #c33;
+          font-size: 18px; }
+          section .content .c_bottom li p:nth-child(3) span, section .content .c_bottom li:last-child a span:nth-child(3) span {
+            float: right;
+            display: inline-block;
+            width: 88px;
+            height: 25px;
+            text-align: center;
+            line-height: 25px;
+            border-radius: 3px;
+            background: #c33;
+            color: #fff;
+            font-size: 16px; }
+      section .content .c_bottom li:last-child {
+        background: url(../img/bgg.png) no-repeat;
+        text-align: center;
+        margin-right: 0; }
+        section .content .c_bottom li:last-child a {
+          width: 210px;
+          height: 55px;
+          display: block;
+          padding: 88px 0 152px; }
+          section .content .c_bottom li:last-child a p, section .content .c_bottom li:last-child a span {
+            color: #646464;
+            font-size: 24px;
+            height: 36px;
+            line-height: 36px; }
+          section .content .c_bottom li:last-child a span {
+            color: #eb5151; }
+
+/*# sourceMappingURL=activityPage.css.map */

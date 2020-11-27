@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width,
+               initial-scale=1.0,
+               minimum-scale=1.0,
+               maximum-scale=1.0,
+               user-scalable=no">
+    <title></title>
+    <link rel="stylesheet" href="./css/swiper-3.4.2.min.css">
+    <style media="screen">
+        *{
+          margin:0;
+          padding: 0;
+        }
+        li{
+          list-style: none;
+        }
+        .header{
+          height: 40px;
+          border-bottom: 1px solid #ccc;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          text-align: center;
+          background: #d43b33;
+        }
+        .header-list{
+          display: flex;
+        }
+        .header-btn{
+          width: 60px;
+          line-height: 40px;
+          font-size: .16rem;
+          color: #fff;
+        }
+        .header-btn>img{
+          width: 26px;
+          height: 26px;
+          padding-top: 5px;
+          color: #fff;
+        }
+        .header-input{
+          flex: 1;
+          line-height: 40px;
+          font-size:.16rem;
+          color: #fff;
+        }
+        .header-input input{
+          width: 100%;
+          height: 20px;
+          border-radius: 4px;
+          border: 1px solid  #fff;
+          text-align: center;
+          background:url(./img/fangdj.png) no-repeat;
+          background-size: 15px;
+          background-position: 50px;;
+        }
+        .footer{
+          height: 50px;
+          border-top: 1px solid #ccc;
+          position: fixed;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          text-align: center;
+          background: #3c3c3c;
+        }
+        .footer li>img{
+          width: 25px;
+          height: 25px;
+        }
+        .footer-list{
+          display: flex;
+          justify-content: space-around;
+          padding-top: 5px;
+          font-size: .16rem;
+        }
+        .footer-list li>p{
+          color: #67686a;
+        }
+        .content{
+          overflow: auto;
+          padding: 40px 0 50px 0;
+        }
+        .content-list{
+          overflow: hidden;
+        }
+        .content-list>li{
+            width: 50vw;
+            height: 50vw;
+            box-sizing: border-box;
+            border: 1px solid red;
+            float: left;
+        }
+        .swiper-container {
+            width:100%;
+        }
+        .swiper-slide>img{
+          width: 100%;
+        }
+    </style>
+  </head>
+  <body>
+      <div class="header">
+          <ul class="header-list">
+              <li class="header-btn"><img src="./img/huat.png" alt=""></li>
+              <li class="header-input"><input type="text" placeholder="搜索音乐.歌词.电台" /></li>
+              <li class="header-btn"><img src="./img/yingyue.png" alt=""></li>
+          </ul>
+      </div>
+      <div class="content">
+        <ul class="content-list">
+            <div class="swiper-container">
+                  <div class="swiper-wrapper">
+                      <div class="swiper-slide"><img src="./img/lunbot.jpg" alt=""></div>
+                      <div class="swiper-slide"><img src="./img/lunbot2.jpg" alt=""></div>
+                      <div class="swiper-slide"><img src="./img/lunbot3.jpg" alt=""></div>
+                      <div class="swiper-slide"><img src="./img/lunbot4.jpg" alt=""></div>
+                  </div>
+
+                  <div class="swiper-pagination"></div>
+                  <div class="swiper-button-prev move"></div>
+                  <div class="swiper-button-next move"></div>
+            </div>
+        </ul>
+
+      </div>
+      <div class="footer">
+          <ul class="footer-list">
+            <li>
+                <img src="./img/faxian.png" alt="">
+                <p>发现音乐</p>
+            </li>
+            <li>
+                <img src="./img/wode.png" alt="">
+                <p>我的音乐</p>
+            </li>
+            <li>
+                <img src="./img/zhanghao.png" alt="">
+                <p>朋友</p>
+            </li>
+            <li>
+                <img src="./img/zhangha.png" alt="">
+                <p>账号</p>
+            </li>
+          </ul>
+      </div>
+
+  <script src="./js/jquery-1.11.1.min.js" charset="utf-8"></script>
+  <script src="./js/rem.js" charset="utf-8"></script>
+  <script src="./js/swiper-3.4.2.jquery.min.js" charset="utf-8"></script>
+  <script src="./js/index.js" charset="utf-8"></script>
+  <script type="text/javascript">
+  var mySwiper = new Swiper ('.swiper-container', {
+      direction : 'horizontal',
+      loop: true,
+      autoplay: 4000,
+      speed:1000,
+      pagination : '.swiper-pagination',
+      paginationClickable :true,
+      prevButton:'.swiper-button-prev',
+      nextButton:'.swiper-button-next',
+      autoplayDisableOnInteraction : false,
+  })
+  $(".swiper-container").mouseout(function(){
+      $(".move").css("display","none");
+  })
+  $(".swiper-container").mouseout(function(){
+      $(".move").css("display","block");
+  })
+  </script>
+  </body>
+</html>

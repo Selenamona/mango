@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>洋码头 - 登录</title>
+	<link rel="stylesheet" href="css/common.css">
+	<link rel="stylesheet" href="css/iconfont.css">
+	<link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+	<header>		
+		<div class="header">
+			<div class="left">	
+				<a href="index.html"><img src="img/logo.png" alt=""></a>
+			</div>	
+			<div class="right">
+				<a href="login.html">请登录</a>
+				<span><a href="register.html">快速注册</a><i class="iconfont">&#xe61d;</i></span>
+				<span><a href="index.html">我的码头</a><i class="iconfont">&#xe61d;</i></span>
+			</div>
+		</div>
+	</header>
+	<section>
+		<div class='pic'>
+			<a href="index.html"><img src="img/loginPic.jpg" alt=""></a>
+		</div>		
+		<div class="right">
+			<span class="login">洋码头帐户登录</span> | <a href="register.html">免费注册</a>
+			<div class="border">
+				<div class="borderb">
+					<div class="form">
+						<p><span>手机/邮箱：</span><input placeholder="请输入手机/邮箱/用户名" type="text"></p>
+						<p><span>密码：</span><input placeholder="请输入密码" type="password"></p>
+						<p><span>验证码：</span><input placeholder="验证码" type="text"><span class="randomInt">6245</span>看不清？<span class="getRandomInt">换张图</span></p>
+						<div class="check"><input type="checkbox">两周内自动登录</div>
+						<button>登录</button><a href="">忘记密码</a>
+					</div>
+					<ul>
+						<li><a href="">微博登录</a></li>
+						<li><a href="">支付宝帐户登录</a></li>
+						<li><a href="">微信登录</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer>
+		<p>© 2009－2018 ymatou.com, All rights reserved 增值电信业务经营许可证：沪B2-20140021 41</p>
+		<p>上海洋码头网络技术有限公司 版权所有 </p>
+		<p>上海市灵石路695号3号楼1404室</p>
+	</footer>
+</body>
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/main.js"></script>
+<script>
+	$(function(){
+		$("a").attr
+		//接收数据
+		$(document).ajaxStart(function(){
+			var oImg = `<img class="loading" src="img/log.gif">`;
+			$(oImg).css({
+				position:"relative"
+			})
+			$("button").before($(oImg))
+		}); 
+	
+		$("button").click(function(){			
+			var oUser = $("input[type=text]").val();
+			var oPass = $("input[type=password]").val();
+
+			if(oUser == ""){
+				var tip = `<p class="tip">请输入用户名</p>`;
+				$(this).before($(tip));
+			}else{
+				if(oPass == ""){
+					$(".tip").html("请输入密码");
+				}else{
+					$.ajax({
+						url:"http://datainfo.duapp.com/shopdata/userinfo.php",
+						type:"POST",
+						data:{
+							status:"login",
+							userID:oUser,
+							password:oPass
+						},
+						success:function(res){
+							res = Number(res)
+							switch(res){
+								case 0 : var tip = `<p class="tip">用户名不存在</p>`;
+										$("button").before($(tip));
+										setTimeout(function(){
+											location.reload();
+										},3000)
+										
+								break;
+								case 2 : var tip = `<p class="tip">用户名密码不符合</p>`;
+										$("button").before($(tip));
+										setTimeout(function(){
+											location.reload();
+										},3000)
+								break;
+								default:var tip = `<p class="tip">登录成功，3秒后跳转</p>`;
+										$("button").before($(tip));
+								setTimeout(function(){
+									location.href = "index.html"
+								},3000);
+								break;
+							}
+						},
+						error:function(){
+								alert("你可以走了~")
+						}
+					})
+				}
+			}		
+		})
+	})
+</script>
+</html>
