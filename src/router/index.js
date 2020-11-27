@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Hello from '@/components/Hello'
 import Home from "@/components/home"
 import DengLu from "@/components/login"
 import Zhuche from "@/components/register"
@@ -18,14 +17,9 @@ import Search from "@/components/search"
 Vue.use(Router)
 
 export default new Router({
-  routes: [
+  routes: [ 
     {
       path: '/',
-      name: 'Hello',
-      component: Hello
-    },
-    {
-      path: '/home',
       name: 'Home',
       component: Home
     },
